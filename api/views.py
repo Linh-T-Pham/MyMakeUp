@@ -5,5 +5,8 @@ from .serializer import ProductSerializer, RatingSerializer
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
-    serializer_class = (RatingSerializer, )
+    serializer_class = ProductSerializer
 
+class RatingViewSet(viewsets.ModelViewSet):
+    queryset = Rating.objects.all()
+    serializer_class = RatingSerializer
