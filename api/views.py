@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from django.contrib.auth.models import User
 from .models import Product, Rating
 from .serializer import ProductSerializer, RatingSerializer
 
@@ -15,7 +16,10 @@ class ProductViewSet(viewsets.ModelViewSet):
         if 'stars' in request.data:
 
             product = Product.objects(id=pk)
-            print('movie title', movie.title)
+            stars = request.dat['stars']
+            #user = request.user
+            user = User.objects.get(id=1)
+            print('user', user.Username)
 
 
             response = {'message': 'awesome'}

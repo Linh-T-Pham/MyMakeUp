@@ -4,7 +4,9 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Product(models.Model):
     title = models.CharField(max_length=32)
+    brand = models.CharField(max_length=32, blank=True)
     description = models.TextField(max_length=360)
+
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
