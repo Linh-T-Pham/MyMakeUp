@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets, status
+from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
@@ -9,6 +10,12 @@ from .serializer import ProductSerializer, RatingSerializer
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+
+    def post(self, request, *args, **kawrgs):
+        image = request.data['image']
+        title = request.data['title']
+        Product.objects.create(title=title, image=image)
+        return HttpResponse({'message': 'Product created'}, status=200)
 
     # what kind of method
     @action(detail=True, methods=['POST'])
