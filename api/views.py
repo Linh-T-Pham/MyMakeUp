@@ -34,12 +34,16 @@ class ProductViewSet(viewsets.ModelViewSet):
                 rating = Rating.objects.get(user=user.id, product=product.id)
                 rating.stars = stars
                 rating.save()
+                serializer = RatingSerializer(rating, many=False)
+                response = {'message': 'Rating updated', 'result': serializer.data}
+                return Response(response, status=status.HTTP_200_OK)
+
             except:
 
-                Rating.objects.create(user=user, product=product, stars=stars)
-
-            response = {'message': 'awesome'}
-            return Response(response, status=status.HTTP_200_OK)
+                rating = Rating.objects.create(user=user, product=product, stars=stars)
+                serializer = RatingSerializer(rating, many=False)
+                response = {'message': 'Rating created', 'result': serializer.data}
+                return Response(response, status=status.HTTP_200_OK)
         else:
             response = {'message': 'Please provide stars'}
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
