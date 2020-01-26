@@ -25,11 +25,18 @@ class ProductViewSet(viewsets.ModelViewSet):
 
             product = Product.objects.get(id=pk)
             print('product title', product.title)
-            # stars = request.dat['stars']
+            stars = request.data['stars']
             #user = request.user
-            # user = User.objects.get(id=1)
-            # print('user', user.Username)
+            user = User.objects.get(id=1)
+            print('user', user.username)
 
+            try:
+                rating = Rating.objects.get(user=user.id, product=product.id)
+                rating.stars = stars
+                rating.save()
+            except:
+
+                Rating.objects.create(user=user, product=product, stars=stars)
 
             response = {'message': 'awesome'}
             return Response(response, status=status.HTTP_200_OK)
