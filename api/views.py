@@ -20,13 +20,15 @@ class ProductViewSet(viewsets.ModelViewSet):
     # what kind of method
     @action(detail=True, methods=['POST'])
     def rate_product(self, request, pk=None):
+
         if 'stars' in request.data:
 
-            product = Product.objects(id=pk)
-            stars = request.dat['stars']
+            product = Product.objects.get(id=pk)
+            print('product title', product.title)
+            # stars = request.dat['stars']
             #user = request.user
-            user = User.objects.get(id=1)
-            print('user', user.Username)
+            # user = User.objects.get(id=1)
+            # print('user', user.Username)
 
 
             response = {'message': 'awesome'}
