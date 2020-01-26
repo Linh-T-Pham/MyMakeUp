@@ -26,9 +26,10 @@ class ProductViewSet(viewsets.ModelViewSet):
             product = Product.objects.get(id=pk)
             print('product title', product.title)
             stars = request.data['stars']
-            #user = request.user
-            user = User.objects.get(id=1)
-            print('user', user.username)
+            user = request.user
+            print('user', user)
+            # user = User.objects.get(id=1)
+            # print('user', user.username)
 
             try:
                 rating = Rating.objects.get(user=user.id, product=product.id)

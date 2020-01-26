@@ -20,11 +20,11 @@ class Product(models.Model):
         cal_sum = 0
         ratings = Rating.objects.filter(product=self)
         for rating in ratings:
-            cal_sum += rating
+            cal_sum += rating.stars
         if len(ratings) > 0:
-             return sum / len(ratings)
+             return cal_sum / len(ratings)
         else:
-            return None
+            return 0
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
