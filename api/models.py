@@ -7,7 +7,7 @@ def upload_path(instance, filname):
 
 class Product(models.Model):
     title = models.CharField(max_length=32)
-    brand = models.CharField(max_length=32, blank=True)Add
+    brand = models.CharField(max_length=32, blank=True)
     description = models.TextField(max_length=360)
 
 
