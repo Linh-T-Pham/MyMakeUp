@@ -15,6 +15,16 @@ class Product(models.Model):
         ratings = Rating.objects.filter(product=self)
         return len(ratings)
 
+    # Calculate average rating for each movie
+    def avg_rating(self):
+        cal_sum = 0
+        ratings = Rating.objects.filter(product=self)
+        for rating in ratings:
+            cal_sum += rating
+        if len(ratings) > 0:
+             return sum / len(ratings)
+        else:
+            return None
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
