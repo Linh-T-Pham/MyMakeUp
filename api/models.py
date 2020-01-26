@@ -10,6 +10,11 @@ class Product(models.Model):
     brand = models.CharField(max_length=32, blank=True)
     description = models.TextField(max_length=360)
 
+    # Find how many ratings each product has
+    def nums_of_ratings(self):
+        ratings = Rating.objects.filter(product=self)
+        return len(ratings)
+
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
