@@ -15,7 +15,7 @@ class Product(models.Model):
         ratings = Rating.objects.filter(product=self)
         return len(ratings)
 
-    # Calculate average rating for each movie
+    # Calculate average rating for each product
     def avg_rating(self):
         cal_sum = 0
         ratings = Rating.objects.filter(product=self)

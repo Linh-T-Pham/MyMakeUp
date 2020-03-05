@@ -3,13 +3,19 @@ from rest_framework import viewsets, status
 from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from rest_framework.authentication import TokenAuthentication
 from django.contrib.auth.models import User
 from .models import Product, Rating
-from .serializer import ProductSerializer, RatingSerializer
+from .serializer import ProductSerializer, RatingSerializer, UserSerializer
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    authentication_classes = (TokenAuthentication, )
 
     def post(self, request, *args, **kawrgs):
         image = request.data['image']
@@ -28,8 +34,6 @@ class ProductViewSet(viewsets.ModelViewSet):
             stars = request.data['stars']
             user = request.user
             print('user', user)
-            # user = User.objects.get(id=1)
-            # print('user', user.username)
 
             try:
                 rating = Rating.objects.get(user=user.id, product=product.id)
@@ -52,3 +56,4 @@ class ProductViewSet(viewsets.ModelViewSet):
 class RatingViewSet(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
+    authentication_classes = (TokenAuthentication, )

@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makeupreviews/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/makeupreviews/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makeupreviews/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/makeupreviews/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +89,11 @@
       <screen x="0" y="0" width="1440" height="896" />
     </state>
     <state x="184" y="112" width="1071" height="696" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.896@0.0.1440.896" timestamp="1579573925899" />
-    <state x="666" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579574458836">
+    <state x="666" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580540241032">
       <screen x="0" y="23" width="1440" height="873" />
     </state>
-    <state x="666" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.873@0.23.1440.873" timestamp="1579574458836" />
+    <state x="666" y="307" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.896@0.0.1440.896" timestamp="1580538808034" />
+    <state x="666" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.873@0.23.1440.873" timestamp="1580540241032" />
     <state width="737" height="205" key="GridCell.Tab.0.bottom" timestamp="1579680466648">
       <screen x="0" y="23" width="1440" height="873" />
     </state>
@@ -119,10 +118,10 @@
       <screen x="0" y="23" width="1440" height="873" />
     </state>
     <state x="458" y="78" key="SettingsEditor/0.23.1440.873@0.23.1440.873" timestamp="1579674068667" />
-    <state x="698" y="272" key="com.intellij.ide.util.TipDialog" timestamp="1579710848867">
+    <state x="698" y="272" key="com.intellij.ide.util.TipDialog" timestamp="1583435434965">
       <screen x="0" y="23" width="1440" height="873" />
     </state>
-    <state x="698" y="272" key="com.intellij.ide.util.TipDialog/0.23.1440.873@0.23.1440.873" timestamp="1579710848867" />
+    <state x="698" y="272" key="com.intellij.ide.util.TipDialog/0.23.1440.873@0.23.1440.873" timestamp="1583435434965" />
     <state x="781" y="77" key="refactoring.ChangeSignatureDialog" timestamp="1579673618165">
       <screen x="0" y="23" width="1440" height="873" />
     </state>
