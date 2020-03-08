@@ -5,7 +5,10 @@ import Productdetails from './components/product-details';
 
 class App extends Component {
 
-  products = ['Eyebrow', 'Foundation', 'Eyeliner', 'Lip Gross'];
+  state = {
+    products: [],
+    selectedProduct: null
+  }
 
   componentDidMount(){
     //fetch data
@@ -14,7 +17,8 @@ class App extends Component {
       headers: {
         'Authorization': 'Token 2a795c60cee426a6483657e2857d3bb08c8c4fd6'
       }
-    }).then( resp => console.log(resp))
+    }).then( resp => resp.json())
+    .then( res => this.setState({products: res}))
     .catch( error => console.log(error))
   }
   render(){
@@ -22,8 +26,8 @@ class App extends Component {
       <div className="App">
           <h1>MyMakeUP</h1>
           <div className="layout">
-            <ProductList products={this.products}/>
-            <Productdetails/>
+            <ProductList products={this.state.products}/>
+            <Productdetails product={this.state.selectedProduct}/>
           </div>
       </div>
   );
