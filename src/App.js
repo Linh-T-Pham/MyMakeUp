@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import ProductList from './components/product-list';
+import Productdetails from './components/product-details';
 
 class App extends Component {
 
@@ -18,10 +19,12 @@ class App extends Component {
   }
   render(){
     return (
-
       <div className="App">
           <h1>MyMakeUP</h1>
-          <ProductList products={this.products}/>
+          <div className="layout">
+            <ProductList products={this.products}/>
+            <Productdetails/>
+          </div>
       </div>
   );
 }

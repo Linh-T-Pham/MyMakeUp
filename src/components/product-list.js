@@ -3,11 +3,11 @@ import React from 'react';
 function ProductList(props){
     
     return (
-        <React.Fragment>
+        <div>
         { props.products.map( product => {
             return <h3 key={product}>{product}</h3>
         })}
-        </React.Fragment>
+        </div>
     )
 }
 
