@@ -1,12 +1,21 @@
 import React from 'react';
 
-function ProductList(props){
+function ProductList(props) {
+
+    const productClicked = product => evt => {
+        props.productClicked(product);
+
+    };
     
     return (
         <div>
-        { props.products.map( product => {
-            return <h3 key={product.id}>{product.title}</h3>
-        })}
+            { props.products.map( product => {
+                return (
+                    <h3 key={product.id} onClick={productClicked(product)}>
+                        {product.title}
+                    </h3>
+                )
+            })}
         </div>
     )
 }

@@ -21,12 +21,16 @@ class App extends Component {
     .then( res => this.setState({products: res}))
     .catch( error => console.log(error))
   }
+
+  productClicked = product => {
+    this.setState({selectedProduct: product});
+  }
   render(){
     return (
       <div className="App">
           <h1>MyMakeUP</h1>
           <div className="layout">
-            <ProductList products={this.state.products}/>
+            <ProductList products={this.state.products} productClicked={this.productClicked}/>
             <Productdetails product={this.state.selectedProduct}/>
           </div>
       </div>
