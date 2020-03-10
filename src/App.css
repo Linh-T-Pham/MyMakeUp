@@ -20,3 +20,11 @@
 .orange {
   color: orange;
 }
+.rate-container {
+  border-top: 2px solid orange;
+}
+
+.rate-container span.fa {
+  font-size: 2em;
+  cursor: pointer;
+}
