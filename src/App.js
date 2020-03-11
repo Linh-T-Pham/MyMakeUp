@@ -22,7 +22,7 @@ class App extends Component {
     .catch( error => console.log(error))
   }
 
-  productClicked = product => {
+  loadProduct = product => {
     this.setState({selectedProduct: product});
   }
   render(){
@@ -30,8 +30,8 @@ class App extends Component {
       <div className="App">
           <h1>MyMakeUP</h1>
           <div className="layout">
-            <ProductList products={this.state.products} productClicked={this.productClicked}/>
-            <Productdetails product={this.state.selectedProduct}/>
+            <ProductList products={this.state.products} productClicked={this.loadProduct}/>
+            <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
           </div>
       </div>
   );
