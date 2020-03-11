@@ -12,6 +12,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: left;
+  grid-gap: 20px
 }
 
 .red {
@@ -27,4 +28,13 @@
 .rate-container span.fa {
   font-size: 2em;
   cursor: pointer;
+}
+.product-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}
+
+.product-item span {
+  font-size: 1.2em;
+  margin: 16px 5px;
 }

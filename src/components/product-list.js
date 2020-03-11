@@ -9,13 +9,18 @@ function ProductList(props) {
     };
 
     const removeClicked = product => {
+        props.editClicked(product);
+    
+    }
+
+    const removeClicked = product => {
         fetch(`${process.env.REACT_APP_API_URL}/api/products/${product.id}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Token 2a795c60cee426a6483657e2857d3bb08c8c4fd6'
             }
-            }).then( resp => this.props.productDeleted(product))
+            }).then( resp => props.productDeleted(product))
             .catch( error => console.log(error))
 
     };
@@ -24,11 +29,11 @@ function ProductList(props) {
         <div>
             { props.products.map( product => {
                 return (
-                    <div key={product.id}>
+                    <div key={product.id} className="product-item">
                     <h3 onClick={productClicked(product)}>
                         {product.title}
                     </h3>
-                    <FontAwesome name='edit'/>
+                    <FontAwesome name='edit'onClick={() => editClicked(product)}/>
                     <FontAwesome name='trash' onClick={() => removeClicked(product)}/>
                     </div>
                 )   
