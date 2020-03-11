@@ -1,4 +1,5 @@
 import React from 'react';
+var FontAwesome = require('react-fontawesome');
 
 function ProductList(props) {
 
@@ -11,10 +12,14 @@ function ProductList(props) {
         <div>
             { props.products.map( product => {
                 return (
-                    <h3 key={product.id} onClick={productClicked(product)}>
+                    <div key={product.id}>
+                    <h3 onClick={productClicked(product)}>
                         {product.title}
                     </h3>
-                )
+                    <FontAwesome name='edit'/>
+                    <FontAwesome name='trash'/>
+                    </div>
+                )   
             })}
         </div>
     )
