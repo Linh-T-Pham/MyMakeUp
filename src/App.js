@@ -25,12 +25,19 @@ class App extends Component {
   loadProduct = product => {
     this.setState({selectedProduct: product});
   }
+
+  productDeleted = selected_product => {
+    const products = this.state.products.filter(product => product.id !== selected_product.id);
+    this.setState({products: products, selectedProduct: null})
+  }
+
   render(){
     return (
       <div className="App">
           <h1>MyMakeUP</h1>
           <div className="layout">
-            <ProductList products={this.state.products} productClicked={this.loadProduct}/>
+            <ProductList products={this.state.products} productClicked={this.loadProduct}
+              productDeleted={this.productDeleted}/>
             <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
           </div>
       </div>
