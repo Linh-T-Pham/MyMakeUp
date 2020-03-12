@@ -39,13 +39,17 @@ class App extends Component {
 
   }
 
+  newProduct = () => {
+    this.setState({editedProduct: {title: '', description: ''}});
+  }
+
   render(){
     return (
       <div className="App">
           <h1>MyMakeUP</h1>
           <div className="layout">
             <ProductList products={this.state.products} productClicked={this.loadProduct}
-              productDeleted={this.productDeleted} editClicked={this.editClicked}/>
+              productDeleted={this.productDeleted} editClicked={this.editClicked} new_product={this.new_product}/>
             <div>
               { !this.state.editedProduct ? 
                 <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>

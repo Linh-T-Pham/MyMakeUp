@@ -24,6 +24,9 @@ function ProductList(props) {
             .catch( error => console.log(error))
 
     };
+    const new_product = () =>{
+        props.new_product();
+    };
     
     return (
         <div>
@@ -38,6 +41,7 @@ function ProductList(props) {
                     </div>
                 )   
             })}
+            <button onClick={new_product}>Add new</button>
         </div>
     )
 }
