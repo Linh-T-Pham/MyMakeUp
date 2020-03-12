@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import './App.css';
 import ProductList from './components/product-list';
 import Productdetails from './components/product-details';
+import ProductForm from './components/product-form';
 
 class App extends Component {
 
   state = {
     products: [],
-    selectedProduct: null
+    selectedProduct: null,
+    editedProduct: null
+
   }
 
   componentDidMount(){
@@ -23,12 +26,17 @@ class App extends Component {
   }
 
   loadProduct = product => {
-    this.setState({selectedProduct: product});
+    this.setState({selectedProduct: product, editedProduct: null});
   }
 
   productDeleted = selected_product => {
     const products = this.state.products.filter(product => product.id !== selected_product.id);
     this.setState({products: products, selectedProduct: null})
+  }
+
+  editClicked = select_Product => {
+    this.setState({editedProduct: select_Product});
+
   }
 
   render(){
@@ -37,10 +45,15 @@ class App extends Component {
           <h1>MyMakeUP</h1>
           <div className="layout">
             <ProductList products={this.state.products} productClicked={this.loadProduct}
-              productDeleted={this.productDeleted}/>
-            <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
-          </div>
+              productDeleted={this.productDeleted} editClicked={this.editClicked}/>
+            <div>
+              { !this.state.editedProduct ? 
+                <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
+              : <ProductForm product={this.state.editedProduct}/> }
+            </div>
       </div>
+    
+    </div>
   );
 }
 }
