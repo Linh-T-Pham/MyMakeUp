@@ -62,7 +62,7 @@ class App extends Component {
               { !this.state.editedProduct ? 
                 <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
               : <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}
-              newProduct={this.addProduct}/> }
+              newProduct={this.addProduct} editedProduct={this.loadProduct}/> }
             </div>
       </div>
     
