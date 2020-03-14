@@ -47,6 +47,10 @@ class App extends Component {
     this.setState({editedProduct: null});
   }
 
+  addProduct= product => {
+    this.setState({products: [...this.state.products, product]});
+  }
+
   render(){
     return (
       <div className="App">
@@ -57,7 +61,8 @@ class App extends Component {
             <div>
               { !this.state.editedProduct ? 
                 <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
-              : <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}/> }
+              : <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}
+              newProduct={this.addProduct}/> }
             </div>
       </div>
     
