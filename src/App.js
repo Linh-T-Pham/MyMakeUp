@@ -40,7 +40,7 @@ class App extends Component {
   }
 
   newProduct = () => {
-    this.setState({editedProduct: {title: '', description: ''}});
+    this.setState({editedProduct: {title: '', brand: '', description: ''}});
   }
 
   cancelForm = () => {
