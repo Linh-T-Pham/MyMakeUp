@@ -49,7 +49,7 @@ class App extends Component {
           <h1>MyMakeUP</h1>
           <div className="layout">
             <ProductList products={this.state.products} productClicked={this.loadProduct}
-              productDeleted={this.productDeleted} editClicked={this.editClicked} new_product={this.new_product}/>
+              productDeleted={this.productDeleted} editClicked={this.editClicked} newProduct={this.newProduct}/>
             <div>
               { !this.state.editedProduct ? 
                 <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
