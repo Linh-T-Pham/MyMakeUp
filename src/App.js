@@ -43,6 +43,10 @@ class App extends Component {
     this.setState({editedProduct: {title: '', description: ''}});
   }
 
+  cancelForm = () => {
+    this.setState({editedProduct: null});
+  }
+
   render(){
     return (
       <div className="App">
@@ -53,7 +57,7 @@ class App extends Component {
             <div>
               { !this.state.editedProduct ? 
                 <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
-              : <ProductForm product={this.state.editedProduct}/> }
+              : <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}/> }
             </div>
       </div>
     
