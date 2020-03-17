@@ -1,8 +1,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
+  min-height: calc(100vh -100px);
   color: white;
   margin: 0;
   padding: 50px;
@@ -37,4 +36,41 @@
 .product-item span {
   font-size: 1.2em;
   margin: 16px 5px;
+}
+
+button {
+  color: #444444;
+  background-color: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 0.8em;
+  outline: none;
+}
+
+button:disabled {
+  color: #f3f3f3;
+  background-color: #444444;
+  cursor: not-allowed;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 0.83em;
+}
+h2 {
+  margin: 0;
+  font-size: 2em;
+}
+.fa-trash {
+  color: coral;
+}
+.fa-edit {
+  color: lightcoral
+}
+h1 {
+  color: lightcoral;
+  font-size: 3em;
 }

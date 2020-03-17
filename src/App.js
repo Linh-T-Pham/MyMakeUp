@@ -3,6 +3,7 @@ import './App.css';
 import ProductList from './components/product-list';
 import Productdetails from './components/product-details';
 import ProductForm from './components/product-form';
+var FontAwesome = require('react-fontawesome');
 
 class App extends Component {
 
@@ -54,7 +55,10 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-          <h1>MyMakeUP</h1>
+          <h1>
+           <FontAwesome name='lips' />
+            <span>MyMakeUp</span>
+          </h1>
           <div className="layout">
             <ProductList products={this.state.products} productClicked={this.loadProduct}
               productDeleted={this.productDeleted} editClicked={this.editClicked} newProduct={this.newProduct}/>
