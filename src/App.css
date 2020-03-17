@@ -65,12 +65,12 @@ h2 {
   font-size: 2em;
 }
 .fa-trash {
-  color: coral;
+  color: rgb(20, 172, 156);
 }
 .fa-edit {
-  color: lightcoral
+  color: turquoise;
 }
 h1 {
-  color: lightcoral;
+  color: turquoise;
   font-size: 3em;
 }
