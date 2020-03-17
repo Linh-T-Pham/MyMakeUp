@@ -74,3 +74,9 @@ h1 {
   color: turquoise;
   font-size: 3em;
 }
+
+.login-container {
+  width: 50%;
+  margin: 50px 25%;
+
+}
