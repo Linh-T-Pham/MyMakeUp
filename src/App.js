@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import ProductList from './components/product-list';
 import Productdetails from './components/product-details';
+import { withCookies } from 'react-cookie';
 import ProductForm from './components/product-form';
 var FontAwesome = require('react-fontawesome');
 
@@ -10,20 +11,28 @@ class App extends Component {
   state = {
     products: [],
     selectedProduct: null,
-    editedProduct: null
+    editedProduct: null,
+    token: this.props.cookies.get('name-token')
 
   }
 
   componentDidMount(){
     //fetch data
-    fetch('http://127.0.0.1:8000/api/products/', {
+    if (this.state.token) {
+      fetch('http://127.0.0.1:8000/api/products/', {
       method: 'GET',
       headers: {
-        'Authorization': 'Token 2a795c60cee426a6483657e2857d3bb08c8c4fd6'
+        'Authorization': `Token ${this.state.token}`
       }
-    }).then( resp => resp.json())
-    .then( res => this.setState({products: res}))
-    .catch( error => console.log(error))
+      }).then( resp => resp.json())
+     .then( res => this.setState({products: res}))
+      .catch( error => console.log(error))
+    }
+      
+    else {
+      window.location.href = '/';
+    }
+    
   }
 
   loadProduct = product => {
@@ -75,4 +84,4 @@ class App extends Component {
 }
 }
 
-export default App;
+export default withCookies(App);
