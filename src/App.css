@@ -40,7 +40,7 @@
 
 button {
   color: #444444;
-  background-color: #f3f3f3;
+  background-color: rgb(121, 204, 196);
   padding: 5px 10px;
   border-radius: 2px;
   font-weight: bold;
@@ -50,7 +50,7 @@ button {
 
 button:disabled {
   color: #f3f3f3;
-  background-color: #444444;
+  background-color: rgb(121, 204, 196);
   cursor: not-allowed;
 }
 
@@ -62,7 +62,8 @@ input, textarea {
 }
 h2 {
   margin: 0;
-  font-size: 2em;
+  font-size: 1.5em;
+  color: rgb(156, 243, 234)
 }
 .fa-trash {
   color: rgb(20, 172, 156);
@@ -74,6 +75,7 @@ h1 {
   color: turquoise;
   font-size: 3em;
 }
+
 
 .login-container {
   width: 50%;

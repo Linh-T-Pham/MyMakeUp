@@ -4,7 +4,6 @@ import ProductList from './components/product-list';
 import Productdetails from './components/product-details';
 import { withCookies } from 'react-cookie';
 import ProductForm from './components/product-form';
-var FontAwesome = require('react-fontawesome');
 
 class App extends Component {
 
@@ -17,7 +16,6 @@ class App extends Component {
   }
 
   componentDidMount(){
-    //fetch data
     if (this.state.token) {
       fetch('http://127.0.0.1:8000/api/products/', {
       method: 'GET',
@@ -27,9 +25,7 @@ class App extends Component {
       }).then( resp => resp.json())
      .then( res => this.setState({products: res}))
       .catch( error => console.log(error))
-    }
-      
-    else {
+    } else {
       window.location.href = '/';
     }
     
@@ -65,17 +61,16 @@ class App extends Component {
     return (
       <div className="App">
           <h1>
-           <FontAwesome name='lips' />
             <span>MyMakeUp</span>
           </h1>
           <div className="layout">
-            <ProductList products={this.state.products} productClicked={this.loadProduct}
+            <ProductList products={this.state.products} productClicked={this.loadProduct} token={this.state.token}
               productDeleted={this.productDeleted} editClicked={this.editClicked} newProduct={this.newProduct}/>
             <div>
               { !this.state.editedProduct ? 
-                <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct}/>
-              : <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}
-              newProduct={this.addProduct} editedProduct={this.loadProduct}/> }
+                <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct} token={this.state.token}/>
+              :   <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}
+              newProduct={this.addProduct} editedProduct={this.loadProduct} token={this.state.token}/> }
             </div>
       </div>
     
