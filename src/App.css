@@ -82,3 +82,12 @@ h1 {
   margin: 50px 25%;
 
 }
+
+.color-me{
+  color: white;
+}
+
+h3 {
+  color: rgb(106, 218, 206);
+  font-size: 2em;
+}

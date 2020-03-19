@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Login from './components/login';
+import About from './components/about';
 import * as serviceWorker from './serviceWorker';
 import { Route, BrowserRouter} from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
@@ -12,6 +13,7 @@ const routing = (
         <CookiesProvider>
             <Route exact path="/" component={Login} />
             <Route exact path="/products" component={App} />
+            <Route exact path="/About" component={About} />
         </CookiesProvider>
     </BrowserRouter>
 )

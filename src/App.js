@@ -63,9 +63,9 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-          <Navbar />
+          <Navbar /><br/><br/>
           <h1>
-            <span>MyMakeUp</span>
+            <span>MyMakeUp</span><br/><br/>
           </h1>
           <div className="layout">
             <ProductList products={this.state.products} productClicked={this.loadProduct} token={this.state.token}
