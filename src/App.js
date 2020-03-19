@@ -4,6 +4,9 @@ import ProductList from './components/product-list';
 import Productdetails from './components/product-details';
 import { withCookies } from 'react-cookie';
 import ProductForm from './components/product-form';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar';
+
 
 class App extends Component {
 
@@ -60,6 +63,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+          <Navbar />
           <h1>
             <span>MyMakeUp</span>
           </h1>

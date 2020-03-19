@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  /* min-height: calc(100vh -100px); */
+  min-height: 100vh;
   color: white;
   margin: 0;
   padding: 50px;
@@ -73,7 +73,7 @@ h2 {
 }
 h1 {
   color: turquoise;
-  font-size: 3em;
+  font-size: 3.5em;
 }
 
 
