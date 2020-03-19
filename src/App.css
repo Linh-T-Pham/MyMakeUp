@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  min-height: calc(100vh -100px);
+  /* min-height: calc(100vh -100px); */
   color: white;
   margin: 0;
   padding: 50px;
