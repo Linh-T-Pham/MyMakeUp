@@ -18,7 +18,7 @@ function ProductList(props) {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Token ${this.props.token}`
+                // 'Authorization': `Token ${this.token}`
             }        
             }).then( resp => props.productDeleted(product))
             .catch( error => console.log(error))
