@@ -16,6 +16,7 @@ const routing = (
             <Route exact path="/products" component={App} />
             <Route exact path="/About" component={About} />
         </CookiesProvider>
+        
     </BrowserRouter>
 )
 

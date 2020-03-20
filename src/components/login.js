@@ -9,7 +9,6 @@ class Login extends Component {
             password: ''
         },
         isLoginView: true
-
     }
 
     inputChanged = event => {

@@ -13,9 +13,7 @@ class ProductForm extends Component {
         let product = this.state.editedProduct;
         product[event.target.name] = event.target.value;
         this.setState({editedProduct: product});
-
     }
-
     saveClicked = () => {
         console.log(this.state.editedProduct);
         fetch(`${process.env.REACT_APP_API_URL}/api/products/`, {
@@ -31,7 +29,6 @@ class ProductForm extends Component {
     }
 
     updateClicked = () => {
-        console.log(this.state.editedProduct);
         fetch(`${process.env.REACT_APP_API_URL}/api/products/${this.props.product.id}/`, {
             method: 'PUT',
             headers: {

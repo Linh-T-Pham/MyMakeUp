@@ -37,8 +37,8 @@ function ProductList(props) {
                         <h3 onClick={productClicked(product)}>
                             {product.title}
                         </h3>
-                        <FontAwesome name='edit' onClick={() => editClicked(product)}/>
-                        <FontAwesome name='trash' onClick={() => removeClicked(product)}/>
+                        <FontAwesome name="edit" onClick={() => editClicked(product)}/>
+                        <FontAwesome name="trash" onClick={() => removeClicked(product)}/>
                     </div>
                 )   
             })}
