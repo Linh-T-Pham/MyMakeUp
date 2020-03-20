@@ -33,7 +33,7 @@ function ProductList(props) {
         <div>
             { props.products.map( product => {
                 return (
-                    <div key={product.id} className='product-item'>
+                    <div key={product.id} className="product-item">
                         <h3 onClick={productClicked(product)}>
                             {product.title}
                         </h3>
@@ -43,9 +43,7 @@ function ProductList(props) {
                 )   
             })}
             <button onClick={newProduct}>Add new</button>
-
         </div>
-        )
-    
+        )   
     }
 export default ProductList;

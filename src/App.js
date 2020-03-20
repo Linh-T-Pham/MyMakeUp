@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 
 
+
+
 class App extends Component {
 
   state = {
@@ -63,7 +65,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-          <Navbar /><br/><br/>
+        <Navbar/>
           <h1>
             <span>MyMakeUp</span><br/><br/>
           </h1>

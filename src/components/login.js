@@ -36,7 +36,6 @@ class Login extends Component {
         
         }else{
 
-    
             fetch(`${process.env.REACT_APP_API_URL}/api/users/`, {
                 method: 'POST',
                 headers: {
@@ -66,13 +65,13 @@ class Login extends Component {
         
             <span>Password</span><br/>
                 <input type="text" name = "password" value={this.state.credentials.password} 
-                onChange={this.inputChanged}/><br/>
+                onChange={this.inputChanged}/><br/><br/>
             <button onClick={this.login}>
                 { this.state.isLoginView ? 'Login': 'Sign Up'}
+            </button><br/><br/>
+            <button onClick={this.toggleView}>
+                { this.state.isLoginView ? 'Create Account': 'Back To Login'}
             </button>
-            <p onClick={this.toggleView}>
-               { this.state.isLoginView ? 'Sign Up': 'Back To Login'}
-            </p>
         </div>
     }
 }

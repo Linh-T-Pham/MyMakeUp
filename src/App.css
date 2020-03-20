@@ -1,10 +1,16 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #2c3038;
   min-height: 100vh;
   color: white;
   margin: 0;
-  padding: 50px;
+  /* padding: 50px; */
+}
+
+.About-Container{
+  background-color: #2c3038;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .layout {
@@ -46,6 +52,7 @@ button {
   font-weight: bold;
   font-size: 0.8em;
   outline: none;
+  margin-left: 1rem;
 }
 
 button:disabled {
@@ -77,6 +84,7 @@ h1 {
 }
 
 
+
 .login-container {
   width: 50%;
   margin: 50px 25%;
@@ -87,7 +95,14 @@ h1 {
   color: white;
 }
 
-h3 {
+h4 {
   color: rgb(106, 218, 206);
   font-size: 2em;
+  margin-left: 20rem;
 }
+
+h5 {
+  color: rgb(106, 218, 206);
+  font-size: 1em;
+}
+
