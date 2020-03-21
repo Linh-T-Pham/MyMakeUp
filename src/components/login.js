@@ -56,7 +56,7 @@ class Login extends Component {
     render(){
         return <div className="login-container">
             <h1>
-                { this.state.isLoginView ? 'Login': 'Register'}
+                { this.state.isLoginView ? 'Login': 'Signup Form'}
             </h1>
             <span>Username</span><br/>
             <input type="text" name = "username" value={this.state.credentials.username} 
@@ -66,10 +66,10 @@ class Login extends Component {
                 <input type="text" name = "password" value={this.state.credentials.password} 
                 onChange={this.inputChanged}/><br/><br/>
             <button onClick={this.login}>
-                { this.state.isLoginView ? 'Login': 'Sign Up'}
+                { this.state.isLoginView ? 'Login': 'SignUp'}
             </button><br/><br/>
             <button onClick={this.toggleView}>
-                { this.state.isLoginView ? 'Create Account': 'Back To Login'}
+                { this.state.isLoginView ? 'New User? Please click here': 'Back To Login. Please click here'}
             </button>
         </div>
     }
