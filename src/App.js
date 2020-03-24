@@ -15,6 +15,7 @@ class App extends Component {
 
   state = {
     products: [],
+    images:[],
     selectedProduct: null,
     editedProduct: null,
     token: this.props.cookies.get('name-token')
@@ -51,8 +52,10 @@ class App extends Component {
 
   }
 
+
+
   newProduct = () => {
-    this.setState({editedProduct: {title: '', brand: '', description: ''}});
+    this.setState({editedProduct: {title: '', brand: '', description: '', comments: ''}});
   }
 
   cancelForm = () => {
@@ -70,12 +73,20 @@ class App extends Component {
           <h1>
             <span>MyMakeUp</span><br/><br/>
           </h1>
+
+          {/* <label>
+              Image
+              <input type="file" />
+            </label> */}
+        
           <div className="layout">
             <ProductList products={this.state.products} productClicked={this.loadProduct} token={this.state.token}
               productDeleted={this.productDeleted} editClicked={this.editClicked} newProduct={this.newProduct}/>
+            
+
             <div>
               { !this.state.editedProduct ? 
-                <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct} token={this.state.token}/>
+                <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct} token={this.state.token}/>               
               :   <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}
               newProduct={this.addProduct} editedProduct={this.loadProduct} token={this.state.token}/> }
             </div>

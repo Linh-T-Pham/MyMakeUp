@@ -11,6 +11,10 @@ function ProductList(props) {
     const editClicked = product => {
         props.editClicked(product);
     
+    };
+
+    const imageClicked = product => {
+        props.imageClicked(product);
     }
 
     const removeClicked = product => {
@@ -39,6 +43,7 @@ function ProductList(props) {
                         </h3>
                         <FontAwesome name="edit" onClick={() => editClicked(product)}/>
                         <FontAwesome name="trash" onClick={() => removeClicked(product)}/>
+                        <FontAwesome name="image" onClick={() => imageClicked(product)}/>
                     </div>
                 )   
             })}

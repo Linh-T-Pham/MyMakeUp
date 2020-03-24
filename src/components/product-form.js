@@ -55,6 +55,8 @@ class ProductForm extends Component {
                 <textarea name = "brand" value = {this.props.product.brand} onChange={this.inputChanged}/><br/>
                 <span>Description</span><br/>
                 <textarea name = "description" value = {this.props.product.description} onChange={this.inputChanged}/><br/>
+                <span>Comments(Optional)</span>
+                <textarea name ="comments" value = {this.props.product.comments} onChange={this.inputChanged}/><br/>
                 { this.props.product.id ? <button disabled = {isDisabled} onClick={this.updateClicked}>Update</button>:
                     <button disabled = {isDisabled} onClick={this.saveClicked}>Save</button>}
 
