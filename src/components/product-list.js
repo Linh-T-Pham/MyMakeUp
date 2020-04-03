@@ -13,10 +13,6 @@ function ProductList(props) {
     
     };
 
-    const imageClicked = product => {
-        props.imageClicked(product);
-    }
-
     const removeClicked = product => {
         fetch(`${process.env.REACT_APP_API_URL}/api/products/${product.id}/`, {
             method: 'DELETE',
@@ -42,11 +38,10 @@ function ProductList(props) {
                             {product.title}
                         </h3>
                         <FontAwesome name="edit" onClick={() => editClicked(product)}/>
-                        <FontAwesome name="trash" onClick={() => removeClicked(product)}/>
-                        <FontAwesome name="image" onClick={() => imageClicked(product)}/>
+                        <FontAwesome name="trash" onClick={() => removeClicked(product)}/>                       
                     </div>
                 )   
-            })}
+            })}<br/><br/>
             <button onClick={newProduct}>Add new</button>
         </div>
         )   

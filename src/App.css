@@ -50,7 +50,7 @@ button {
   padding: 5px 10px;
   border-radius: 2px;
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 1em;
   outline: none;
   margin-left: 1rem;
 }
@@ -98,11 +98,11 @@ h1 {
 h4 {
   color: rgb(106, 218, 206);
   font-size: 2em;
-  margin-left: 20rem;
+  margin-left: 15rem;
 }
 
 h5 {
   color: rgb(106, 218, 206);
-  font-size: 1em;
+  font-size: 1.5em;
+  margin-left: 8rem;
 }
-

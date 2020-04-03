@@ -8,14 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 
 
-
-
-
 class App extends Component {
 
   state = {
     products: [],
-    images:[],
     selectedProduct: null,
     editedProduct: null,
     token: this.props.cookies.get('name-token')
@@ -53,9 +49,8 @@ class App extends Component {
   }
 
 
-
   newProduct = () => {
-    this.setState({editedProduct: {title: '', brand: '', description: '', comments: ''}});
+    this.setState({editedProduct: {title: '', brand: '', description: ''}});
   }
 
   cancelForm = () => {
@@ -69,25 +64,17 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <Navbar/>
+         <Navbar/>
           <h1>
             <span>MyMakeUp</span><br/><br/>
-          </h1>
-
-          {/* <label>
-              Image
-              <input type="file" />
-            </label> */}
-        
+          </h1>               
           <div className="layout">
             <ProductList products={this.state.products} productClicked={this.loadProduct} token={this.state.token}
               productDeleted={this.productDeleted} editClicked={this.editClicked} newProduct={this.newProduct}/>
-            
-
             <div>
               { !this.state.editedProduct ? 
                 <Productdetails product={this.state.selectedProduct} updateProduct={this.loadProduct} token={this.state.token}/>               
-              :   <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}
+              :  <ProductForm product={this.state.editedProduct} cancelForm={this.cancelForm}
               newProduct={this.addProduct} editedProduct={this.loadProduct} token={this.state.token}/> }
             </div>
       </div>

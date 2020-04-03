@@ -51,16 +51,15 @@ class ProductForm extends Component {
             <React.Fragment>
                 <span> Product Title</span><br/>
                 <input type="text" name = "title" value={this.props.product.title} onChange={this.inputChanged}/><br/>
+                <span> Upload An Image</span>
+                <input type="file" />
                 <span>Brand Name</span><br/>
                 <textarea name = "brand" value = {this.props.product.brand} onChange={this.inputChanged}/><br/>
                 <span>Description</span><br/>
                 <textarea name = "description" value = {this.props.product.description} onChange={this.inputChanged}/><br/>
-                <span>Comments(Optional)</span>
-                <textarea name ="comments" value = {this.props.product.comments} onChange={this.inputChanged}/><br/>
                 { this.props.product.id ? <button disabled = {isDisabled} onClick={this.updateClicked}>Update</button>:
                     <button disabled = {isDisabled} onClick={this.saveClicked}>Save</button>}
-
-                <button onClick={this.cancelClicked}>Cancel</button>
+                    <button onClick={this.cancelClicked}>Cancel</button>
             </React.Fragment>
         )
     }
