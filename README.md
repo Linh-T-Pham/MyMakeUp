@@ -1,6 +1,4 @@
 
-Access the website: https://mymakeup-1ee96.web.app/<br />
-(Still fixing image uploading on the front end)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
